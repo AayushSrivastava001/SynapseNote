@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
@@ -49,7 +50,7 @@ fun LoginScreen(navController: NavHostController, authViewModel: AuthViewModel, 
             .fillMaxSize()
             .background(Color(0xFF1B1B1B))
     ) {
-        Image(painter = painterResource(id = R.drawable.fower_1), contentDescription =" " )
+        Image(painter = painterResource(id = R.drawable.fower_1), contentDescription =" " , modifier = Modifier.size(600.dp))
         Spacer(modifier = Modifier.height(20.dp))
         Column(
             verticalArrangement = Arrangement.Center,

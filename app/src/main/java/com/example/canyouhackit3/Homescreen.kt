@@ -61,9 +61,9 @@ fun HomeScreen1(navController: NavHostController, authViewModel: AuthViewModel, 
             Text(text = "Click Here To Login", color = Color(0xFF1B1B1B))
 
         }
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.height(40.dp))
         Row() {
-            Text(text = "---------------------------------------------------------------------",fontSize = 20.sp,
+            Text(text = "------------------------------------------------------------------------",fontSize = 20.sp,
                 color = Color(0XFFF5F5F5))
             Spacer(modifier = Modifier.width(50.dp))
 
@@ -81,7 +81,7 @@ fun HomeScreen1(navController: NavHostController, authViewModel: AuthViewModel, 
 
         }
         Row() {
-            Text(text = "---------------------------------------------------------------------",fontSize = 20.sp,
+            Text(text = "------------------------------------------------------------------------",fontSize = 20.sp,
                 color = Color(0XFFF5F5F5))
             Spacer(modifier = Modifier.width(50.dp))
 
@@ -97,7 +97,7 @@ fun HomeScreen1(navController: NavHostController, authViewModel: AuthViewModel, 
         }
         Spacer(modifier = Modifier.height(10.dp))
         Row() {
-            Text(text = "---------------------------------------------------------------------",fontSize = 20.sp,
+            Text(text = "------------------------------------------------------------------------",fontSize = 20.sp,
                 color = Color(0XFFF5F5F5))
             Spacer(modifier = Modifier.width(50.dp))
 
@@ -113,13 +113,13 @@ fun HomeScreen1(navController: NavHostController, authViewModel: AuthViewModel, 
         }
         Spacer(modifier = Modifier.height(10.dp))
         Row() {
-            Text(text = "---------------------------------------------------------------------",fontSize = 20.sp,
+            Text(text = "------------------------------------------------------------------------",fontSize = 20.sp,
                 color = Color(0XFFF5F5F5))
 
 
         }
         Spacer(modifier = Modifier.width(50.dp))
-        Image(painter = painterResource(id = R.drawable.canyouhackit5), contentDescription = " ", modifier = Modifier.size(400.dp))
+        Image(painter = painterResource(id = R.drawable.canyouhackit5), contentDescription = " ", modifier = Modifier.size(500.dp))
 
     }
 }
