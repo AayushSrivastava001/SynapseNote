@@ -20,7 +20,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             SynapseNoteTheme {
                 /*HomeScreen1()*/
-                LoginScreen()
+                /*LoginScreen()*/
+                RegisterScreen()
 
             }
         }
