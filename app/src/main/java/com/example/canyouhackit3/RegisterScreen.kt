@@ -39,12 +39,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.compose.runtime.LaunchedEffect
-
+import androidx.navigation.NavHostController
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun RegisterScreen(modifier: Modifier, navController: NavController, authViewModel: AuthViewModel){
+fun RegisterScreen(navController: NavHostController, authViewModel: AuthViewModel, modifier: Modifier = Modifier) {
     var email by remember { mutableStateOf(" ") }
     var name by remember { mutableStateOf(" ") }
     var password by remember { mutableStateOf(" ") }

@@ -12,13 +12,13 @@ fun MyAppNavigation(modifier: Modifier = Modifier,authViewModel: AuthViewModel) 
 
     NavHost(navController = navController, startDestination = "home" , builder = {
         composable("login"){
-            LoginScreen(modifier,navController,authViewModel)
+            LoginScreen(modifier = modifier ,navController = navController,authViewModel = authViewModel)
         }
         composable("signup"){
-            RegisterScreen(modifier,navController,authViewModel)
+            RegisterScreen(modifier = modifier ,navController = navController,authViewModel = authViewModel)
         }
         composable("home"){
-            HomeScreen1(modifier,navController,authViewModel)
+            HomeScreen1(modifier = modifier ,navController = navController,authViewModel = authViewModel)
         }
     })
 

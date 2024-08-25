@@ -25,9 +25,10 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 
 @Composable
-fun HomeScreen1(modifier: Modifier = Modifier, navController: NavController, authViewModel: AuthViewModel) {
+fun HomeScreen1(navController: NavHostController, authViewModel: AuthViewModel, modifier: Modifier = Modifier) {
     Column(modifier = Modifier
         .fillMaxSize()
         .background(Color(0xFF1B1B1B))

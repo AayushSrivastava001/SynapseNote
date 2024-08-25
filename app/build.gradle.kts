@@ -77,4 +77,9 @@ dependencies {
     implementation("androidx.compose.ui:ui:1.6.8")
     implementation(libs.androidx.core.ktx.v1120)
 
+    implementation("com.google.dagger:hilt-android:2.44")
+    implementation("com.google.dagger:hilt-compiler:2.44")
+    implementation("com.google.firebase:firebase-auth-ktx:21.0.1")
+
+
 }
