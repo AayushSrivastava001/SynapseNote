@@ -88,7 +88,7 @@ fun LoginScreen(modifier: Modifier, navController: NavController, authViewModel:
             TextField(value = passwords, onValueChange = {passwords=it},
                 label={ Text(text = "PASSWORD")},
                 leadingIcon = {
-                    Icon(painter = painterResource(id = R.drawable.baseline_person_24), contentDescription = null)
+                    Icon(painter = painterResource(id = R.drawable.baseline_password_24), contentDescription = null)
                 },
                 trailingIcon = {
                     if (passwords.isNotEmpty()){
