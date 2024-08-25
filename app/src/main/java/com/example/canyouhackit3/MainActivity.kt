@@ -19,9 +19,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             SynapseNoteTheme {
-                /*HomeScreen1()*/
-                LoginScreen()
+                HomeScreen1()
+                /*LoginScreen()*/
                 /*RegisterScreen()*/
+                /*NoteScreen()*/
 
             }
         }

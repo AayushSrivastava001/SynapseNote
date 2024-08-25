@@ -86,7 +86,7 @@ fun LoginScreen(){
             TextField(value = emails, onValueChange = {emails=it},
                 label={ Text(text = "PASSWORD")},
                 leadingIcon = {
-                    Icon(painter = painterResource(id = R.drawable.baseline_person_24), contentDescription = null)
+                    Icon(painter = painterResource(id = R.drawable.baseline_password_24), contentDescription = null)
                 },
                 trailingIcon = {
                     if (emails.isNotEmpty()){
