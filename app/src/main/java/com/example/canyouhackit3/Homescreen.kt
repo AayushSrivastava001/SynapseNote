@@ -20,11 +20,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @Composable
-fun HomeScreen1(){
+fun HomeScreen1(modifier: Modifier = Modifier, navController: NavController, authViewModel: AuthViewModel) {
     Column(modifier = Modifier
         .fillMaxSize()
         .background(Color(0xFF1B1B1B))
@@ -119,3 +122,5 @@ fun HomeScreen1(){
 
     }
 }
+
+
