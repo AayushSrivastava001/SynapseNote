@@ -7,6 +7,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.Image
@@ -19,9 +20,12 @@ import androidx.compose.material.icons.rounded.Clear
 import androidx.compose.material.icons.rounded.Star
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
+
+import androidx.activity.viewModels
+
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -32,18 +36,35 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.canyouhackit3.ui.theme.SynapseNoteTheme
 
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+
+import com.example.canyouhackit3.ui.theme.SynapseNoteTheme
+import dagger.hilt.android.AndroidEntryPoint
+import java.lang.reflect.Modifier
+import androidx.compose.foundation.layout.fillMaxSize
+
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
     val voiceToText by lazy {
         Voice_to_text(application)
     }
     @SuppressLint("UnusedContentLambdaTargetStateParameter")
+
+    private val authViewModel: AuthViewModel by viewModels()
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             SynapseNoteTheme {
+
                 var canRecord by remember {
                     mutableStateOf(false)
 
@@ -102,23 +123,22 @@ class MainActivity : ComponentActivity() {
                 /*NoteScreen()*/
                 /*MenuGrid()*/
 
+
+                val navController = rememberNavController()
+                Scaffold {
+                    NavigationComponent(navController = navController, authViewModel = authViewModel)
+                }
+
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    SynapseNoteTheme {
-        Greeting("Android")
+public fun NavigationComponent(navController: NavHostController, authViewModel: AuthViewModel): Unit {
+    NavHost(navController = navController, startDestination = "login") {
+        composable("login") { LoginScreen(navController = navController, authViewModel = authViewModel, modifier = Modifier.fillMaxSize()) }
+        composable("home") { HomeScreen1(navController = navController, authViewModel = authViewModel, modifier = Modifier.fillMaxSize()) }
+        composable("register") { RegisterScreen(navController = navController, authViewModel = authViewModel, modifier = Modifier.fillMaxSize()) }
     }
 }

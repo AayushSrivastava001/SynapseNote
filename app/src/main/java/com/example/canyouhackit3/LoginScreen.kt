@@ -34,14 +34,17 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginScreen(){
+fun LoginScreen(navController: NavHostController, authViewModel: AuthViewModel, modifier: Modifier = Modifier) {
     var emails by remember { mutableStateOf(" ") }
-    var names by remember { mutableStateOf(" ") }
+    var passwords by remember { mutableStateOf(" ") }
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -58,13 +61,13 @@ fun LoginScreen(){
         ) {
             Text(text = "LOGIN", fontSize = 40.sp, fontStyle = FontStyle.Italic, color = Color.Yellow)
             Spacer(modifier = Modifier.height(10.dp))
-            TextField(value = names, onValueChange = {names=it},
-                label={ Text(text = "ENTER YOUR ROLL NUMBER")},
+            TextField(value = emails, onValueChange = {emails=it},
+                label={ Text(text = "EMAIL")},
                 leadingIcon = {
                     Icon(painter = painterResource(id = R.drawable.baseline_person_24), contentDescription = null)
                 },
                 trailingIcon = {
-                    if (names.isNotEmpty()){
+                    if (emails.isNotEmpty()){
                         Icon(painter = painterResource(id = R.drawable.baseline_close_24), contentDescription = null)
                     }
                 },
@@ -84,13 +87,13 @@ fun LoginScreen(){
                 )
             )
             Spacer(modifier = Modifier.height(10.dp))
-            TextField(value = emails, onValueChange = {emails=it},
+            TextField(value = passwords, onValueChange = {passwords=it},
                 label={ Text(text = "PASSWORD")},
                 leadingIcon = {
                     Icon(painter = painterResource(id = R.drawable.baseline_password_24), contentDescription = null)
                 },
                 trailingIcon = {
-                    if (emails.isNotEmpty()){
+                    if (passwords.isNotEmpty()){
                         Icon(painter = painterResource(id = R.drawable.baseline_close_24), contentDescription = null)
                     }
                 },
