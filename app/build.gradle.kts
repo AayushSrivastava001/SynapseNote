@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+
+//    Firebase Plugin
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -69,6 +72,11 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+
+    //    Firebase Dependencies
+    implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
+    implementation("com.google.firebase:firebase-analytics")
+
     implementation(libs.androidx.lifecycle.livedata.ktx)
 
     implementation(libs.androidx.lifecycle.livedata.ktx)
@@ -80,6 +88,5 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.44")
     implementation("com.google.dagger:hilt-compiler:2.44")
     implementation("com.google.firebase:firebase-auth-ktx:21.0.1")
-
 
 }
